@@ -13,13 +13,13 @@
         <!--Root View Controller-->
         <scene sceneID="vgz-Od-IfW">
             <objects>
-                <tableViewController id="oLK-Vm-P5L" sceneMemberID="viewController">
+                <tableViewController id="oLK-Vm-P5L" customClass="DjListTableViewController" customModule="Player1n2a1r" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5S1-kq-Vl9">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="djcell" rowHeight="100" id="gbU-de-WFm">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="djCell" rowHeight="100" id="gbU-de-WFm" customClass="DjListTableViewCell" customModule="Player1n2a1r" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="768" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gbU-de-WFm" id="70A-fR-4Ps">
@@ -27,48 +27,55 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLJ-VB-9fY">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="99.5"/>
+                                            <rect key="frame" x="20" y="0.0" width="136" height="99.5"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_black" translatesAutoresizingMaskIntoConstraints="NO" id="vxd-u5-DIN">
-                                                    <rect key="frame" x="14.5" y="0.0" width="99.5" height="99.5"/>
+                                                    <rect key="frame" x="28" y="10" width="80" height="79.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="vxd-u5-DIN" secondAttribute="height" multiplier="1:1" id="Luo-5C-sDf"/>
+                                                        <constraint firstAttribute="width" secondItem="vxd-u5-DIN" secondAttribute="height" multiplier="1:1" id="651-QN-SHP"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="vxd-u5-DIN" firstAttribute="height" secondItem="cLJ-VB-9fY" secondAttribute="height" id="SdY-fZ-We7"/>
-                                                <constraint firstItem="vxd-u5-DIN" firstAttribute="centerY" secondItem="cLJ-VB-9fY" secondAttribute="centerY" id="ZhI-fN-k7j"/>
-                                                <constraint firstItem="vxd-u5-DIN" firstAttribute="centerX" secondItem="cLJ-VB-9fY" secondAttribute="centerX" id="zKW-Hx-gzp"/>
+                                                <constraint firstItem="vxd-u5-DIN" firstAttribute="height" secondItem="cLJ-VB-9fY" secondAttribute="height" multiplier="0.8" id="35x-zi-dtz"/>
+                                                <constraint firstItem="vxd-u5-DIN" firstAttribute="centerY" secondItem="cLJ-VB-9fY" secondAttribute="centerY" id="68n-Wu-3mA"/>
+                                                <constraint firstItem="vxd-u5-DIN" firstAttribute="centerX" secondItem="cLJ-VB-9fY" secondAttribute="centerX" id="RUL-OH-dh2"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZ0-Hv-Sgb">
-                                            <rect key="frame" x="128" y="0.0" width="640" height="99.5"/>
+                                            <rect key="frame" x="156" y="0.0" width="612" height="99.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WK6-Qd-8j8">
-                                                    <rect key="frame" x="116.5" y="38.5" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WK6-Qd-8j8">
+                                                    <rect key="frame" x="71" y="39.5" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="WK6-Qd-8j8" firstAttribute="centerY" secondItem="XZ0-Hv-Sgb" secondAttribute="centerY" id="Os1-7T-88Y"/>
+                                                <constraint firstItem="WK6-Qd-8j8" firstAttribute="centerX" secondItem="XZ0-Hv-Sgb" secondAttribute="centerX" multiplier="0.3" id="Vaf-KV-mcn"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="XZ0-Hv-Sgb" firstAttribute="top" secondItem="70A-fR-4Ps" secondAttribute="top" id="J2y-rQ-Nra"/>
                                         <constraint firstAttribute="bottom" secondItem="XZ0-Hv-Sgb" secondAttribute="bottom" id="N9v-SH-HuO"/>
                                         <constraint firstItem="XZ0-Hv-Sgb" firstAttribute="leading" secondItem="cLJ-VB-9fY" secondAttribute="trailing" id="WLA-fg-CBu"/>
-                                        <constraint firstItem="cLJ-VB-9fY" firstAttribute="leading" secondItem="70A-fR-4Ps" secondAttribute="leading" id="WUX-bL-gvK"/>
-                                        <constraint firstItem="XZ0-Hv-Sgb" firstAttribute="width" secondItem="cLJ-VB-9fY" secondAttribute="width" multiplier="5" id="WZ2-Pv-Xnj"/>
+                                        <constraint firstItem="XZ0-Hv-Sgb" firstAttribute="width" secondItem="cLJ-VB-9fY" secondAttribute="width" multiplier="4.5" id="WZ2-Pv-Xnj"/>
                                         <constraint firstAttribute="bottom" secondItem="cLJ-VB-9fY" secondAttribute="bottom" id="fpd-iH-sUx"/>
+                                        <constraint firstItem="cLJ-VB-9fY" firstAttribute="leading" secondItem="70A-fR-4Ps" secondAttribute="leadingMargin" id="mNp-9n-uec"/>
                                         <constraint firstItem="cLJ-VB-9fY" firstAttribute="top" secondItem="70A-fR-4Ps" secondAttribute="top" id="mTu-A1-GpR"/>
                                         <constraint firstItem="XZ0-Hv-Sgb" firstAttribute="leading" secondItem="cLJ-VB-9fY" secondAttribute="trailing" id="sZn-NJ-LEO"/>
                                         <constraint firstAttribute="trailing" secondItem="XZ0-Hv-Sgb" secondAttribute="trailing" id="y22-T7-GKh"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="djImage" destination="vxd-u5-DIN" id="Gak-tO-wYn"/>
+                                    <outlet property="djName" destination="WK6-Qd-8j8" id="M9e-d9-it5"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -101,10 +108,10 @@
             </objects>
             <point key="canvasLocation" x="-452" y="132"/>
         </scene>
-        <!--View Controller-->
+        <!--Player View Controller-->
         <scene sceneID="jvJ-hF-V8n">
             <objects>
-                <viewController id="U45-zb-8hp" sceneMemberID="viewController">
+                <viewController id="U45-zb-8hp" customClass="PlayerViewController" customModule="Player1n2a1r" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qUo-uG-aeB">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,11 +143,23 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="768" height="207"/>
                                                 <items>
                                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="veE-rz-FZh"/>
-                                                    <barButtonItem systemItem="rewind" id="zDq-Mo-uFu"/>
+                                                    <barButtonItem systemItem="rewind" id="zDq-Mo-uFu">
+                                                        <connections>
+                                                            <action selector="backButtonTouched:" destination="U45-zb-8hp" id="9Yb-wK-0hE"/>
+                                                        </connections>
+                                                    </barButtonItem>
                                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Ipy-8D-EMC"/>
-                                                    <barButtonItem systemItem="play" id="iap-Nr-EHN"/>
+                                                    <barButtonItem systemItem="play" id="iap-Nr-EHN">
+                                                        <connections>
+                                                            <action selector="playButtonTouched:" destination="U45-zb-8hp" id="d3p-vr-pWl"/>
+                                                        </connections>
+                                                    </barButtonItem>
                                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="5bF-jm-k5m"/>
-                                                    <barButtonItem systemItem="fastForward" id="Gig-4H-sXv"/>
+                                                    <barButtonItem systemItem="fastForward" id="Gig-4H-sXv">
+                                                        <connections>
+                                                            <action selector="nextButtonTouched:" destination="U45-zb-8hp" id="0VG-ls-GXz"/>
+                                                        </connections>
+                                                    </barButtonItem>
                                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="SbC-5Y-0qK"/>
                                                 </items>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -171,8 +190,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afY-iS-keo">
                                         <rect key="frame" x="0.0" y="68.5" width="768" height="96.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Astrud Gilberto - Black Magic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fq1-tm-ziI">
-                                                <rect key="frame" x="264" y="38" width="240.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Astrud Gilberto " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fq1-tm-ziI">
+                                                <rect key="frame" x="319" y="38" width="130" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -220,6 +239,12 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="playButton" destination="iap-Nr-EHN" id="WiY-Ex-A4s"/>
+                        <outlet property="playerToolbar" destination="Xch-qv-QPp" id="AYF-Zl-Oe5"/>
+                        <outlet property="progressBar" destination="8Rp-oK-Ob5" id="sDb-fo-X15"/>
+                        <outlet property="songLabel" destination="Fq1-tm-ziI" id="UPF-aj-E1g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgC-tU-kSp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
