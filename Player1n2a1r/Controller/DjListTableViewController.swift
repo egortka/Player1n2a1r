@@ -61,7 +61,7 @@ class DjListTableViewController: UITableViewController {
     }
     
     func updatePlaylistForDj(name: String, playlistString: String)  {
-        let playlist = playlistString.components(separatedBy: "|")
+        let playlist = playlistString.components(separatedBy: " | ")
         print("Sucess! Got the playlist: \(playlist)")
         djList.append(DiscJockey(name: name, playlist: playlist, isLiveBroadcasting: false))
         tableView.reloadData()

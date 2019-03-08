@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--DJs list-->
         <scene sceneID="vgz-Od-IfW">
             <objects>
                 <tableViewController id="oLK-Vm-P5L" customClass="DjListTableViewController" customModule="Player1n2a1r" customModuleProvider="target" sceneMemberID="viewController">
@@ -83,7 +83,7 @@
                             <outlet property="delegate" destination="oLK-Vm-P5L" id="WjU-I4-9CT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="4H9-XY-Vrx"/>
+                    <navigationItem key="navigationItem" title="DJs list" id="4H9-XY-Vrx"/>
                     <connections>
                         <segue destination="U45-zb-8hp" kind="show" identifier="showPlayer" id="23m-u8-YPm"/>
                     </connections>
@@ -99,6 +99,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3xJ-y2-NHF">
                         <rect key="frame" x="0.0" y="20" width="768" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="oLK-Vm-P5L" kind="relationship" relationship="rootViewController" id="2wN-XK-k3G"/>
@@ -176,15 +184,37 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Rp-oK-Ob5">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="68.5"/>
                                         <subviews>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gp0-Ey-eWP">
-                                                <rect key="frame" x="115" y="33" width="538" height="2"/>
-                                            </progressView>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="KAM-y9-yCr">
+                                                <rect key="frame" x="-155.5" y="19" width="1079" height="31"/>
+                                                <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="didDrugProgressBar:" destination="U45-zb-8hp" eventType="touchUpOutside" id="E3U-5r-KII"/>
+                                                    <action selector="didDrugProgressBar:" destination="U45-zb-8hp" eventType="touchUpInside" id="XRo-Hx-kjX"/>
+                                                    <action selector="drugProgressBar:" destination="U45-zb-8hp" eventType="valueChanged" id="R5n-qj-DaW"/>
+                                                </connections>
+                                            </slider>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDe-Hm-dST">
+                                                <rect key="frame" x="95.5" y="46.5" width="39" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5t-Ey-QDK" userLabel="Remain Time">
+                                                <rect key="frame" x="633.5" y="46.5" width="39" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="Gp0-Ey-eWP" firstAttribute="centerY" secondItem="8Rp-oK-Ob5" secondAttribute="centerY" id="59U-93-nvf"/>
-                                            <constraint firstItem="Gp0-Ey-eWP" firstAttribute="width" secondItem="8Rp-oK-Ob5" secondAttribute="width" multiplier="0.7" id="6mv-B0-K3V"/>
-                                            <constraint firstItem="Gp0-Ey-eWP" firstAttribute="centerX" secondItem="8Rp-oK-Ob5" secondAttribute="centerX" id="sC0-dd-cZh"/>
+                                            <constraint firstItem="KAM-y9-yCr" firstAttribute="centerY" secondItem="8Rp-oK-Ob5" secondAttribute="centerY" id="85Y-1D-k2d"/>
+                                            <constraint firstItem="gDe-Hm-dST" firstAttribute="centerX" secondItem="8Rp-oK-Ob5" secondAttribute="centerX" multiplier="0.3" id="8RO-N9-8C5"/>
+                                            <constraint firstItem="Y5t-Ey-QDK" firstAttribute="centerY" secondItem="8Rp-oK-Ob5" secondAttribute="centerY" multiplier="1.6" id="VXW-fM-56V"/>
+                                            <constraint firstItem="gDe-Hm-dST" firstAttribute="centerY" secondItem="8Rp-oK-Ob5" secondAttribute="centerY" multiplier="1.6" id="fPW-v2-Onc"/>
+                                            <constraint firstItem="Y5t-Ey-QDK" firstAttribute="centerX" secondItem="8Rp-oK-Ob5" secondAttribute="centerX" multiplier="1.7" id="tHY-hb-zaa"/>
+                                            <constraint firstItem="KAM-y9-yCr" firstAttribute="width" secondItem="8Rp-oK-Ob5" secondAttribute="width" multiplier="1.4" id="yol-9S-Yol"/>
+                                            <constraint firstItem="KAM-y9-yCr" firstAttribute="centerX" secondItem="8Rp-oK-Ob5" secondAttribute="centerX" id="zQv-Tk-NlR"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afY-iS-keo">
@@ -241,14 +271,16 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="playButton" destination="iap-Nr-EHN" id="WiY-Ex-A4s"/>
+                        <outlet property="playTime" destination="gDe-Hm-dST" id="qAC-bh-sWY"/>
                         <outlet property="playerToolbar" destination="Xch-qv-QPp" id="AYF-Zl-Oe5"/>
-                        <outlet property="progressBar" destination="8Rp-oK-Ob5" id="sDb-fo-X15"/>
+                        <outlet property="progressBar" destination="KAM-y9-yCr" id="waz-eS-pPl"/>
+                        <outlet property="remainTime" destination="Y5t-Ey-QDK" id="eSj-lh-pC6"/>
                         <outlet property="songLabel" destination="Fq1-tm-ziI" id="UPF-aj-E1g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgC-tU-kSp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1352.1739130434785" y="131.25"/>
+            <point key="canvasLocation" x="1351.5625" y="131.25"/>
         </scene>
     </scenes>
     <resources>

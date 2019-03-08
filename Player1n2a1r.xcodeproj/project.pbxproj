@@ -32,6 +32,7 @@
 		51A95152222EF1CC00AAB6C4 /* DjListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DjListTableViewController.swift; sourceTree = "<group>"; };
 		51A95154222F05FB00AAB6C4 /* DjListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DjListTableViewCell.swift; sourceTree = "<group>"; };
 		51A95156222F0C1300AAB6C4 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		51A95159222F253D00AAB6C4 /* Player1n2a1r-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Player1n2a1r-Bridging-Header.h"; sourceTree = "<group>"; };
 		E3940168A8F003981116B014 /* Pods-Player1n2a1r.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Player1n2a1r.release.xcconfig"; path = "Target Support Files/Pods-Player1n2a1r/Pods-Player1n2a1r.release.xcconfig"; sourceTree = "<group>"; };
 		E8A7D3E3E454EC786B5CD310 /* Pods_Player1n2a1r.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Player1n2a1r.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,11 +79,10 @@
 		51A95134222EBE8200AAB6C4 /* Player1n2a1r */ = {
 			isa = PBXGroup;
 			children = (
+				51A9515B222F2A7A00AAB6C4 /* Supporting Files */,
 				51A95149222EEC7F00AAB6C4 /* Model */,
 				51A9514A222EEC8800AAB6C4 /* View */,
 				51A9514B222EEC8E00AAB6C4 /* Controller */,
-				51A9513C222EBE8300AAB6C4 /* Assets.xcassets */,
-				51A95141222EBE8300AAB6C4 /* Info.plist */,
 			);
 			path = Player1n2a1r;
 			sourceTree = "<group>";
@@ -98,6 +98,7 @@
 		51A9514A222EEC8800AAB6C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				51A9513C222EBE8300AAB6C4 /* Assets.xcassets */,
 				51A9513E222EBE8300AAB6C4 /* LaunchScreen.storyboard */,
 				51A95139222EBE8200AAB6C4 /* Main.storyboard */,
 			);
@@ -113,6 +114,15 @@
 				51A95156222F0C1300AAB6C4 /* PlayerViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		51A9515B222F2A7A00AAB6C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				51A95159222F253D00AAB6C4 /* Player1n2a1r-Bridging-Header.h */,
+				51A95141222EBE8300AAB6C4 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		7E1B0E8FC8F7FC6BB96A46E1 /* Pods */ = {
@@ -158,6 +168,11 @@
 				TargetAttributes = {
 					51A95131222EBE8200AAB6C4 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -398,16 +413,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Player1n2a1r/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4YBD8B784H;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "Player1n2a1r/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.et.Player1n2a1r;
+				PRODUCT_BUNDLE_IDENTIFIER = com.et.Player;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Player1n2a1r/Supporting Files/Player1n2a1r-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -420,16 +438,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Player1n2a1r/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 4YBD8B784H;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "Player1n2a1r/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.et.Player1n2a1r;
+				PRODUCT_BUNDLE_IDENTIFIER = com.et.Player;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Player1n2a1r/Supporting Files/Player1n2a1r-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

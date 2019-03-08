@@ -6,5 +6,6 @@ target 'Player1n2a1r' do
   use_frameworks!
 
   # Pods for Player1n2a1r
-  pod 'Alamofire'
+    pod 'Alamofire'
+    pod 'MobileVLCKit'
 end
