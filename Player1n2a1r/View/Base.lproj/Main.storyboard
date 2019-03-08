@@ -188,8 +188,8 @@
                                                 <rect key="frame" x="-155.5" y="19" width="1079" height="31"/>
                                                 <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="didDrugProgressBar:" destination="U45-zb-8hp" eventType="touchUpOutside" id="E3U-5r-KII"/>
-                                                    <action selector="didDrugProgressBar:" destination="U45-zb-8hp" eventType="touchUpInside" id="XRo-Hx-kjX"/>
+                                                    <action selector="didDrugProgressBar:" destination="U45-zb-8hp" eventType="touchUpInside" id="Ica-AS-kIb"/>
+                                                    <action selector="didDrugProgressBar:" destination="U45-zb-8hp" eventType="touchUpOutside" id="rdM-XX-hN8"/>
                                                     <action selector="drugProgressBar:" destination="U45-zb-8hp" eventType="valueChanged" id="R5n-qj-DaW"/>
                                                 </connections>
                                             </slider>

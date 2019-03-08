@@ -21,6 +21,7 @@ class PlayerViewController: UIViewController, VLCMediaPlayerDelegate, UIApplicat
     var time: VLCTime = VLCTime()
     var timer: Timer = Timer()
     var songLength: VLCTime?
+    var position: Float = 0
     
     var mediaPlayer = VLCMediaPlayer()
     
@@ -50,8 +51,13 @@ class PlayerViewController: UIViewController, VLCMediaPlayerDelegate, UIApplicat
         mediaPlayer.stop()
     }
 
+    //MARK: - media player delegate methods
     func mediaPlayerTimeChanged(_ aNotification: Notification!) {
         updatePlayer()
+    }
+    
+    func mediaPlayerStateChanged(_ aNotification: Notification!) {
+        checkForSongFinish()
     }
 
 
@@ -140,6 +146,7 @@ class PlayerViewController: UIViewController, VLCMediaPlayerDelegate, UIApplicat
     
     func setSong() {
         mediaPlayer.stop()
+        position = 0
         getSongName()
         wipeProgressBar()
         updateProgressBar()
@@ -156,9 +163,10 @@ class PlayerViewController: UIViewController, VLCMediaPlayerDelegate, UIApplicat
     }
     
     @objc func updatePlayer() {
+        position = mediaPlayer.position
         setupNowPlaying()
         updateProgressBar()
-        checkForSongFinish()
+       // checkForSongFinish()
     }
     
     //MARK: - Background controls
@@ -189,21 +197,28 @@ class PlayerViewController: UIViewController, VLCMediaPlayerDelegate, UIApplicat
         // Add handler for Pause Command
         commandCenter.previousTrackCommand.addTarget { [unowned self] event in
             self.setPrevious()
+            self.setupNowPlaying()
             return .success
         }
         
         commandCenter.nextTrackCommand.addTarget { [unowned self] event in
             self.setNext()
+            self.setupNowPlaying()
             return .success
         }
         commandCenter.changePlaybackPositionCommand.isEnabled = true
         commandCenter.changePlaybackPositionCommand.addTarget(self, action:#selector(changePlaybackPositionCommand(_:)))
-    
     }
     @objc func changePlaybackPositionCommand(_ event:MPChangePlaybackPositionCommandEvent) -> MPRemoteCommandHandlerStatus{
-        let currentPosition = Float(event.positionTime)
-        let currentLength = Float(mediaPlayer.media.length.intValue) / 1000.0
-        mediaPlayer.position = currentPosition / currentLength
+
+        let currentPosition = Int32(event.positionTime)
+        let currentLength = mediaPlayer.media.length.intValue / 1000
+        
+        position = Float(currentPosition) / Float(currentLength)
+        
+        mediaPlayer.position = position
+        checkForSongFinish()
+
         return MPRemoteCommandHandlerStatus.success;
     }
     
@@ -228,6 +243,7 @@ class PlayerViewController: UIViewController, VLCMediaPlayerDelegate, UIApplicat
         
         // Set the metadata
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+        
     }
     
     //MARK: - progress bar methods
@@ -256,20 +272,24 @@ class PlayerViewController: UIViewController, VLCMediaPlayerDelegate, UIApplicat
             self.remainTime.text = "00:00"
         }
     }
-    
+
     @IBAction func didDrugProgressBar(_ sender: Any) {
+        position = progressBar.value
+        mediaPlayer.position = position
         checkForSongFinish()
     }
 
     
     @IBAction func drugProgressBar(_ sender: Any) {
-            mediaPlayer.position = progressBar.value
+            position = progressBar.value
+            mediaPlayer.position = position
+            print(progressBar.value)
     }
     
     //MARK: - helpers methods
     
     func checkForSongFinish() {
-        if progressBar.value == 1.0 {
+        if position > 0.999 {
             setNext()
         }
     }
